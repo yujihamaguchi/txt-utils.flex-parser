@@ -1,0 +1,23 @@
+records = record* | Epsilon
+record =
+  <prefix>
+    <separator>
+      id
+    <separator>
+      name
+    <separator>
+      age
+    <separator>
+  <postfix>
+  <separator>
+prefix = "##"
+separator = newline indent
+newline = CR? LF
+CR = #'\r'
+LF = #'\n'
+indent = #'^\s*'
+id = #'[A-Z]\d+'
+name = #'[a-zA-Z ]+'
+age = #'[\d]+'
+postfix = "##"
+
